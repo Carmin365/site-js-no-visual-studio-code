@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge">
+	<title> Site JavaScript com formulário, desenvolvido no Visual Studio Code </title>
+	<style>
+		body {
+			background-color: darkcyan;
+			color: white;
+			font: normal 20pt Arial;
+		}
+		h1{
+			color: rgb(8, 2, 2);
+		}
+	</style>
+	<script>
+		document.write("<h2>"+document.title+"</h2>");
+	</script>
+	<h1>@carmin_portfolio || github.com/Carmin365.com</h1>
+
+
+<script>
+
+	function validarForm(){
+	var val=document.getElementById("valido");
+	try{
+	 var x=document.forms["meuForm"]["nome"].value;
+	 if(x==null || x==""){
+	  throw "O Nome deve ser preenchido!";
+	 }
+	 var y=document.forms["meuForm"]["email"].value;
+	 var atpos = y.indexOf("@");
+	 var dotpos = y.lastIndexOf(".");
+	 if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= y.lenght){
+	  throw "Digite um email válido!";
+} 
+return true;
+
+} catch (err){
+	val.style.color = "#FF0000";
+	val.innerHTML = "Erro: " + err;
+	return false;
+} //Fim cath
+} //Fim function
+</script>
+</head>
+
+<body><script src="meuscript.js"></script>
+	<p><b>Olá, meu nome é <a href="http://www.instagram.com/car.dsgn.coder/"> Carmin </a> e sou UX/UI Designer Freelancer e Desenvolvedora Fullstack.</b></p>
+	<p><i>Redija uma pequena apresentação, informe seu e-mail e clique em </i><mark><u>Enviar</u></mark></b></p>
+<form name="meuForm" action="recebe.php"
+	onsubmit="return validarForm();" method="post">
+ <textarea rows="10" cols="40"maxlength="500"></textarea>
+
+	<input type="submit" value="Enviar">
+</form>
+<p id="valido"></p>
+
+
+<p>Os dados inseridos acima devem ser <i>verdadeiros</i>.</p>
+<script>
+	window.alert('Ir para o formulário')
+	window.confirm('Tem certeza que quer ir para o formulário?')
+	window.prompt('Qual o seu nome?')
+</script>
+
+</body>
+</html>
